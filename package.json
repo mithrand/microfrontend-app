@@ -2,15 +2,26 @@
   "name": "microfrontend-app",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "graph": "nx graph"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nrwl/nx-cloud": "latest",
+    "cypress": "^12.1.0",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-cypress": "^0.28.0",
+    "eslint-config-prettier": "^8.5.0",
     "nx": "15.3.3",
-    "prettier": "^2.6.2"
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0"
   },
   "workspaces": [
-    "packages/*"
+    "apps/*",
+    "libs/*",
+    "tools/*"
   ]
 }

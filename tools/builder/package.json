@@ -1,0 +1,38 @@
+{
+  "name": "builder",
+  "version": "1.0.0",
+  "description": "A build for microfrontend apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "bin": {
+    "builder": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithrand/microfrontend-app.git"
+  },
+  "keywords": [
+    "builder",
+    "webpack"
+  ],
+  "author": "antonio munoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mithrand/microfrontend-app/issues"
+  },
+  "homepage": "https://github.com/mithrand/microfrontend-app#readme",
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-merge": "^5.8.0",
+    "webpack-stats-plugin": "^1.1.1",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.17"
+  }
+}
