@@ -6,7 +6,7 @@ const { requireInContext, resolveInContext } = require('../libs/utils')
 
 const { getCommonConfig } = require('./webpack.common.config')
 
-const packageJson = requireInContext('../package.json')
+const packageJson = requireInContext('./package.json')
 
 const getProdConfig = () => {
   const common = getCommonConfig()

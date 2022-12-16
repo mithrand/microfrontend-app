@@ -22,6 +22,6 @@ exports.handler = ({ device }) => {
   setConfig({ device })
   const webpackDevConfig = getDevConfig()
   const serverConfig = getServerConfig()
-  const server = WebpackDevServer(serverConfig, webpack(webpackDevConfig))
+  const server = new WebpackDevServer(serverConfig, webpack(webpackDevConfig))
   server.start()
 }

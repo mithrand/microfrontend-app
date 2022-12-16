@@ -19,7 +19,7 @@ const getDevConfig = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: resolveInContext('./index.html'),
+        template: resolveInContext('./public/index.html'),
       }),
       new webpack.HotModuleReplacementPlugin(),
       new ReactRefreshWebpackPlugin(),

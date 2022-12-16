@@ -40,15 +40,7 @@ const getCommonConfig = () => {
         },
       ],
     },
-    plugins: [
-      new ForkTsCheckerWebpackPlugin({
-        diagnosticOptions: {
-          semantic: true,
-          syntactic: true,
-        },
-        mode: 'write-references',
-      }),
-    ],
+    plugins: [new ForkTsCheckerWebpackPlugin()],
   }
 }
 

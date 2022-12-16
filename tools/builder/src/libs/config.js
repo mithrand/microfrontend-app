@@ -8,9 +8,7 @@ let config = {
   device: 'desktop',
   devServer: {
     port: 3000,
-    onAfterSetupMiddleware: () => {},
-    onBeforeSetupMiddleware: () => {},
-    setupMiddlewares: () => {},
+    setupMiddlewares: (middlewares) => middlewares,
     static: {
       directory: './public',
     },
