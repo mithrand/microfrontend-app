@@ -1,19 +1,35 @@
-const path = require('path');
-const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const common = require('./webpack.common.config');
+const webpack = require('webpack')
+const { merge } = require('webpack-merge')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-module.exports = merge(common, {
-  mode: 'development',
-  devtool: 'eval-source-map',
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
-    }),
-  ],
-});
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { getCommonConfig } = require('./webpack.common.config')
+
+const { resolveInContext } = require('../libs/utils')
+
+const getDevConfig = () => {
+  const common = getCommonConfig()
+  return merge(common, {
+    mode: 'development',
+    devtool: 'eval-source-map',
+    output: {
+      filename: '[name].bundle.js',
+      path: resolveInContext('./dist'),
+      publicPath: '/',
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: resolveInContext('./index.html'),
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+      new ReactRefreshWebpackPlugin(),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"development"',
+      }),
+    ],
+  })
+}
+
+module.exports = {
+  getDevConfig,
+}

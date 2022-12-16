@@ -1,13 +1,13 @@
-const path = require('path')
 const merge = require('webpack-merge')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { StatsWriterPlugin } = require('webpack-stats-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const { StatsWriterPlugin } = require('webpack-stats-plugin')
 
-const prod = require('./webpack.prod.config');
+const { getProdConfig } = require('./webpack.prod.config')
+const { resolveInContext } = require('../libs/utils')
 
-
-module.exports = () => (
-  merge(prod, {
+const getAnalyseConfig = () => {
+  const prod = getProdConfig()
+  return merge(prod, {
     plugins: [
       new StatsWriterPlugin({
         filename: 'stats.json',
@@ -15,11 +15,14 @@ module.exports = () => (
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
         analyzerMode: 'static',
-        reportFilename: path.resolve(
-          process.cwd(),
+        reportFilename: resolveInContext(
           './bundle-reports/bundle-analyzer-report.html',
         ),
       }),
     ],
   })
-);
+}
+
+module.exports = {
+  getAnalyseConfig,
+}

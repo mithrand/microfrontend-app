@@ -1,24 +1,31 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { merge } = require('webpack-merge');
+const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { merge } = require('webpack-merge')
 
-const requireInContext = require('../libs/utils/requireInContext')
-const common = require('./webpack.common.config');
+const { requireInContext, resolveInContext } = require('../libs/utils')
 
-const packageJson = requireInContext('../package.json');
+const { getCommonConfig } = require('./webpack.common.config')
 
-const context = process.cwd()
+const packageJson = requireInContext('../package.json')
 
-module.exports = () => (
-  merge(common, {
+const getProdConfig = () => {
+  const common = getCommonConfig()
+  return merge(common, {
     mode: 'production',
     devtool: 'source-map',
     output: {
-      path: path.resolve(context, './dist'),
+      path: resolveInContext('./dist'),
       filename: `[name].${packageJson.version}.[contenthash].bundle.js`,
     },
     plugins: [
       new CleanWebpackPlugin(),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"',
+      }),
     ],
   })
-);
+}
+
+module.exports = {
+  getProdConfig,
+}
