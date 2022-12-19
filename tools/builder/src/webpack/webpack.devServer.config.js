@@ -1,7 +1,7 @@
 const { getConfig } = require('../libs/config')
 const { resolveInContext } = require('../libs/utils')
 
-const getServerConfig = () => {
+const getDevServerConfig = () => {
   const {
     devServer: { port, setupMiddlewares, static },
   } = getConfig()
@@ -9,7 +9,6 @@ const getServerConfig = () => {
   return {
     server: 'https',
     https: true,
-    hot: true,
     static: {
       directory: resolveInContext(static.directory),
     },
@@ -36,5 +35,5 @@ const getServerConfig = () => {
 }
 
 module.exports = {
-  getServerConfig,
+  getDevServerConfig,
 }

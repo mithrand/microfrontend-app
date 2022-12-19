@@ -3,7 +3,9 @@ const WebpackDevServer = require('webpack-dev-server')
 
 const { setConfig } = require('../../src/libs/config')
 const { getDevConfig } = require('../../src/webpack/webpack.dev.config')
-const { getServerConfig } = require('../../src/webpack/webpack.server.config')
+const {
+  getDevServerConfig,
+} = require('../../src/webpack/webpack.devServer.config')
 
 exports.command = 'start'
 exports.desc = 'Start the app for development purposes in a stand alone mode'
@@ -21,7 +23,7 @@ exports.builder = {
 exports.handler = ({ device }) => {
   setConfig({ device })
   const webpackDevConfig = getDevConfig()
-  const serverConfig = getServerConfig()
+  const serverConfig = getDevServerConfig()
   const server = new WebpackDevServer(serverConfig, webpack(webpackDevConfig))
   server.start()
 }

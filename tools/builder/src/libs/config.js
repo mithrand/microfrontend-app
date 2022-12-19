@@ -13,6 +13,13 @@ let config = {
       directory: './public',
     },
   },
+  prodServer: {
+    port: 3000,
+    setupMiddlewares: (middlewares) => middlewares,
+    static: {
+      directory: './dist',
+    },
+  },
 }
 
 const customConfigFilePath = './builder.config.js'
@@ -25,6 +32,7 @@ const setConfig = (inlineConfig = {}) => {
   }
 
   config = merge(config, customConfig, inlineConfig)
+  return config
 }
 
 const getConfig = () => config

@@ -2,6 +2,9 @@ const webpack = require('webpack')
 
 const { setConfig } = require('../../src/libs/config')
 const { getAnalyseConfig } = require('../../src/webpack/webpack.analyse.config')
+const {
+  webpackErrorHandler,
+} = require('../../src/webpack/webpack.errorhandler')
 
 exports.command = 'analyse'
 exports.desc =
@@ -20,5 +23,5 @@ exports.builder = {
 exports.handler = ({ device }) => {
   setConfig({ device })
   const webpackAnalyseConfig = getAnalyseConfig()
-  webpack(webpackAnalyseConfig)
+  webpack(webpackAnalyseConfig, webpackErrorHandler)
 }

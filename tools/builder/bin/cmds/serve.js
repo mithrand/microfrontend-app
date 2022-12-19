@@ -1,7 +1,11 @@
 const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
 
 const { setConfig } = require('../../src/libs/config')
 const { getProdConfig } = require('../../src/webpack/webpack.prod.config')
+const {
+  getProdServerConfig,
+} = require('../../src/webpack/webpack.prodServer.config')
 
 exports.command = 'serve'
 exports.desc =
@@ -18,7 +22,9 @@ exports.builder = {
 }
 
 exports.handler = ({ device }) => {
-  setConfig({ device })
+  setConfig({ device, devServer: { static: '' } })
   const webpackProdConfig = getProdConfig()
-  webpack(webpackProdConfig)
+  const serverConfig = getProdServerConfig()
+  const server = new WebpackDevServer(serverConfig, webpack(webpackProdConfig))
+  server.start()
 }

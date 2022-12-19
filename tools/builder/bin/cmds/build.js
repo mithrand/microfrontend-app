@@ -2,6 +2,9 @@ const webpack = require('webpack')
 
 const { setConfig } = require('../../src/libs/config')
 const { getProdConfig } = require('../../src/webpack/webpack.prod.config')
+const {
+  webpackErrorHandler,
+} = require('../../src/webpack/webpack.errorhandler')
 
 exports.command = 'build'
 exports.desc = 'Build the app for distribution purposes'
@@ -19,5 +22,5 @@ exports.builder = {
 exports.handler = ({ device }) => {
   setConfig({ device })
   const webpackProdConfig = getProdConfig()
-  webpack(webpackProdConfig)
+  webpack(webpackProdConfig, webpackErrorHandler)
 }
