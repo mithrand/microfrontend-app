@@ -21,6 +21,7 @@ const getDevServerConfig = () => {
       },
       progress: true,
     },
+    historyApiFallback: true,
     open: true,
     onListening: (devServer) => {
       if (!devServer) {
