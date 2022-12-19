@@ -1,7 +1,7 @@
 {
-  "name": "@microfronted-app/composer-app",
+  "name": "@microfronted-app/application-a",
   "version": "1.0.0",
-  "description": "The composer app is the main app of our microfrontend arquitechture and it's in charge of the shared packages and loading the different app parts",
+  "description": "A sample application to be used in the composer",
   "main": "./dist/index.js",
   "scripts": {
     "test": "jest",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/mithrand/microfrontend-app.git"
   },
   "keywords": [
-    "composer",
+    "applicationA",
     "microfronted"
   ],
   "author": "antonio munoz",
@@ -27,14 +27,10 @@
   "peerDependencies": {
     "@testing-library/react": "*",
     "lodash.merge": "*",
-    "pubsubjs": "*",
     "react": "*",
     "react-dom": "*",
-    "react-router-dom": "*"
-  },
-  "dependencies": {
-    "@microfronted-app/application-a": "*",
-    "@microfronted-app/application-b": "*"
+    "react-router-dom": "*",
+    "pubsubjs": "*"
   },
   "devDependencies": {
     "@microfronted-app/builder": "*"
