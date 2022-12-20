@@ -3,9 +3,11 @@ const { existsSync } = require('fs')
 
 const { requireInContext } = require('./utils')
 const { resolveInContext } = require('./utils')
+const { buildModes } = require('../constants')
 
 let config = {
   device: 'desktop',
+  buildMode: buildModes.assets,
   devServer: {
     port: 3000,
     setupMiddlewares: (middlewares) => middlewares,

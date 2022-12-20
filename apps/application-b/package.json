@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A sample application to be used in the composer",
   "main": "./dist/index.js",
+  "types": "./dist/@types/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "builder build",
+    "build": "builder build --mode library",
     "serve": "builder serve",
     "start": "builder start",
     "analyse": "builder analyse"

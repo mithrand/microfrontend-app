@@ -33,14 +33,27 @@ const getCommonConfig = () => {
             {
               loader: 'ts-loader',
               options: {
-                transpileOnly: true,
+                transpileOnly: false,
               },
             },
           ],
         },
       ],
     },
-    plugins: [new ForkTsCheckerWebpackPlugin()],
+    plugins: [
+      new ForkTsCheckerWebpackPlugin({
+        typescript: {
+          build: true,
+          mode: 'write-dts',
+          diagnosticOptions: {
+            semantic: true,
+            syntactic: true,
+          },
+        },
+        logger: console,
+        devServer: false,
+      }),
+    ],
   }
 }
 

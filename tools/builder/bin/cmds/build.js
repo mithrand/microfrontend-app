@@ -5,6 +5,7 @@ const { getProdConfig } = require('../../src/webpack/webpack.prod.config')
 const {
   webpackErrorHandler,
 } = require('../../src/webpack/webpack.errorhandler')
+const { buildModes } = require('../../src/constants')
 
 exports.command = 'build'
 exports.desc = 'Build the app for distribution purposes'
@@ -17,10 +18,19 @@ exports.builder = {
     default: 'desktop',
     choices: ['desktop', 'tablet', 'mobile'],
   },
+  mode: {
+    describe: 'Specify the build mode for the output',
+    type: 'string',
+    alias: 'b',
+    default: 'asset',
+    choices: Object.keys(buildModes),
+  },
 }
 
-exports.handler = ({ device }) => {
-  setConfig({ device })
+exports.handler = ({ device, mode }) => {
+  // eslint-disable-next-line no-console
+  console.log(`Building for ${device} in mode ${mode} `)
+  setConfig({ device, buildMode: mode })
   const webpackProdConfig = getProdConfig()
   webpack(webpackProdConfig, webpackErrorHandler)
 }

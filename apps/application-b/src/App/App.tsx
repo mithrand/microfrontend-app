@@ -1,5 +1,7 @@
 import React from 'react'
 
-const App = () => <div>Application A</div>
+export type Application = React.FC
+
+const App: Application = () => <div>Application B</div>
 
 export default App
