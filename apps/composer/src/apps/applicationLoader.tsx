@@ -1,13 +1,13 @@
-import React, { lazy, Suspense, ComponentType } from 'react'
+import React, { ComponentType, lazy, Suspense } from 'react'
 
 const applicationLoader = ({
-  importedComponent,
+  remoteApp,
   Skeleton,
 }: {
-  importedComponent: Promise<{ default: ComponentType<any> }>
+  remoteApp: Promise<{ default: ComponentType<any> }>
   Skeleton: () => JSX.Element
 }) => {
-  const Application = lazy(() => importedComponent)
+  const Application = lazy(() => remoteApp)
 
   return () => (
     <Suspense fallback={<Skeleton />}>

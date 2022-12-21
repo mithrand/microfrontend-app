@@ -4,4 +4,9 @@ module.exports = {
     library: 'library',
     microfrontend: 'microfrontend',
   },
+  devices: {
+    mobile: 'mobile',
+    tablet: 'tablet',
+    desktop: 'desktop',
+  },
 }

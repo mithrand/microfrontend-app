@@ -2,7 +2,10 @@ import applicationLoader from '../applicationLoader'
 
 import Skeleton from './skeleton'
 
+// @ts-ignore
+const remoteApp = import('applicationA/App')
+
 export default applicationLoader({
-  importedComponent: import('@microfronted-app/application-a'),
+  remoteApp,
   Skeleton,
 })

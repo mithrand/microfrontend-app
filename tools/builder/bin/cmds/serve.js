@@ -22,7 +22,7 @@ exports.builder = {
 }
 
 exports.handler = ({ device }) => {
-  setConfig({ device, devServer: { static: '' } })
+  setConfig({ device })
   const webpackProdConfig = getProdConfig()
   const serverConfig = getProdServerConfig()
   const server = new WebpackDevServer(serverConfig, webpack(webpackProdConfig))

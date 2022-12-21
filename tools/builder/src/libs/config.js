@@ -1,8 +1,5 @@
 const { merge } = require('lodash')
-const { existsSync } = require('fs')
-
-const { requireInContext } = require('./utils')
-const { resolveInContext } = require('./utils')
+const { requireIfExist } = require('./utils')
 const { buildModes } = require('../constants')
 
 let config = {
@@ -22,17 +19,13 @@ let config = {
       directory: './dist',
     },
   },
+  moduleFederation: null,
 }
 
 const customConfigFilePath = './builder.config.js'
 
 const setConfig = (inlineConfig = {}) => {
-  let customConfig = {}
-
-  if (existsSync(resolveInContext(customConfigFilePath))) {
-    customConfig = requireInContext(customConfigFilePath)
-  }
-
+  const customConfig = requireIfExist(customConfigFilePath)
   config = merge(config, customConfig, inlineConfig)
   return config
 }

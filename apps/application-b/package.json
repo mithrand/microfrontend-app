@@ -6,7 +6,7 @@
   "types": "./dist/@types/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "builder build --mode library",
+    "build": "builder build --mode microfrontend",
     "serve": "builder serve",
     "start": "builder start",
     "analyse": "builder analyse"

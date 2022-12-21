@@ -1,3 +1,4 @@
+const { ModuleFederationPlugin } = require('webpack').container
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const { getConfig } = require('../libs/config')
 
@@ -8,7 +9,7 @@ const extensionsByDevice = {
 }
 
 const getCommonConfig = () => {
-  const { device } = getConfig()
+  const { device, moduleFederation } = getConfig()
   return {
     resolve: {
       extensions: [
@@ -53,6 +54,9 @@ const getCommonConfig = () => {
         logger: console,
         devServer: false,
       }),
+      ...(moduleFederation
+        ? [new ModuleFederationPlugin(moduleFederation)]
+        : []),
     ],
   }
 }

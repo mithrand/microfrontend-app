@@ -22,7 +22,7 @@ exports.builder = {
     describe: 'Specify the build mode for the output',
     type: 'string',
     alias: 'b',
-    default: 'asset',
+    default: buildModes.assets,
     choices: Object.keys(buildModes),
   },
 }
