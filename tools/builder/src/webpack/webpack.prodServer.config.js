@@ -21,6 +21,9 @@ const getProdServerConfig = () => {
       },
       progress: true,
     },
+    devMiddleware: {
+      writeToDisk: true,
+    },
     open: true,
     onListening: (devServer) => {
       if (!devServer) {

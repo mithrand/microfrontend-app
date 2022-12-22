@@ -6,7 +6,7 @@ module.exports = {
     name: 'applicationB',
     filename: 'remoteEntry.js',
     exposes: {
-      './App': './src/App',
+      '.': './src',
     },
     shared: {
       react: { singleton: true },

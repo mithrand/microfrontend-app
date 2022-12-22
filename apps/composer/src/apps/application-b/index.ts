@@ -1,8 +1,7 @@
 import applicationLoader from '../applicationLoader'
 import Skeleton from './skeleton'
 
-// @ts-ignore
-const remoteApp = import('applicationB/App')
+const remoteApp = import('@microfronted-app/application-b')
 
 export default applicationLoader({
   remoteApp,
