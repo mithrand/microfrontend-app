@@ -8,6 +8,8 @@ module.exports = {
         'applicationB@https://localhost:3002/remoteEntry.js',
       '@microfrontend-app/ui-kit':
         'uiKit@https://localhost:3003/remoteEntry.js',
+      '@microfrontend-app/header':
+        'header@https://localhost:3004/remoteEntry.js',
     },
     shared: {
       pubsubjs: { singleton: true },

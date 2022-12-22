@@ -35,6 +35,7 @@
   "dependencies": {
     "@microfrontend-app/application-a": "*",
     "@microfrontend-app/application-b": "*",
+    "@microfrontend-app/header": "*",
     "@microfrontend-app/ui-kit": "*"
   },
   "devDependencies": {

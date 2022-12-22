@@ -1,25 +1,29 @@
 import React from 'react'
 import { redirect } from 'react-router-dom'
 
-import Apps from '../apps'
+import Main from '../apps/main'
+import NotFound from '../apps/not-found'
+import ApplicationA from '../apps/application-a'
+import ApplicationB from '../apps/application-b'
+import Header from '../apps/header/header'
 import Layout from '../layout/layout'
 
 const routes = [
   {
     path: '/',
-    element: <Layout main={[Apps.Main]} />,
+    element: <Layout header={[Header]} main={[Main]} />,
   },
   {
     path: '/ApplicationA',
-    element: <Layout main={[Apps.ApplicationA]} />,
+    element: <Layout header={[Header]} main={[ApplicationA]} />,
   },
   {
     path: '/ApplicationB',
-    element: <Layout main={[Apps.ApplicationB]} />,
+    element: <Layout header={[Header]} main={[ApplicationB]} />,
   },
   {
     path: '/404',
-    element: <Layout main={[Apps.NotFound]} />,
+    element: <Layout header={[Header]} main={[NotFound]} />,
   },
   {
     path: '*',
