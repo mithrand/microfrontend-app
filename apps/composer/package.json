@@ -1,5 +1,5 @@
 {
-  "name": "@microfronted-app/composer-app",
+  "name": "@microfrontend-app/composer-app",
   "version": "1.0.0",
   "description": "The composer app is the main app of our microfrontend arquitechture and it's in charge of the shared packages and loading the different app parts",
   "main": "./dist/index.js",
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "composer",
-    "microfronted"
+    "microfrontend"
   ],
   "author": "antonio munoz",
   "license": "ISC",
@@ -33,11 +33,11 @@
     "react": "*"
   },
   "dependencies": {
-    "@microfronted-app/application-a": "*",
-    "@microfronted-app/application-b": "*",
-    "@microfronted-app/ui-kit": "*"
+    "@microfrontend-app/application-a": "*",
+    "@microfrontend-app/application-b": "*",
+    "@microfrontend-app/ui-kit": "*"
   },
   "devDependencies": {
-    "@microfronted-app/builder": "*"
+    "@microfrontend-app/builder": "*"
   }
 }

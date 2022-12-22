@@ -1,4 +1,4 @@
-# @microfronted-app/ui-kit
+# @microfrontend-app/ui-kit
 
 This package contains a sample microfrontend appliaction that will be used in composer.
 

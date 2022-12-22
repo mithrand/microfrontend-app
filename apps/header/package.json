@@ -1,7 +1,7 @@
 {
-  "name": "@microfrontend-app/ui-kit",
+  "name": "@microfrontend-app/header",
   "version": "1.0.0",
-  "description": "A ui-kit library",
+  "description": "A sample header to be used in the composer",
   "main": "./dist/index.js",
   "types": "./dist/@types/index.d.ts",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/mithrand/microfrontend-app.git"
   },
   "keywords": [
-    "applicationA",
+    "header",
     "microfrontend"
   ],
   "author": "antonio munoz",
@@ -26,16 +26,15 @@
   },
   "homepage": "https://github.com/mithrand/microfrontend-app#readme",
   "peerDependencies": {
-    "@chakra-ui/react": "*",
-    "@emotion/react": "*",
-    "@emotion/styled": "*",
-    "framer-motion": "*",
     "@testing-library/react": "*",
     "lodash.merge": "*",
-    "pubsubjs": "*",
+    "react": "*",
     "react-dom": "*",
     "react-router-dom": "*",
-    "react": "*"
+    "pubsubjs": "*"
+  },
+  "dependencies": {
+    "@microfrontend-app/ui-kit": "*"
   },
   "devDependencies": {
     "@microfrontend-app/builder": "*"

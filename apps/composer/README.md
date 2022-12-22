@@ -1,4 +1,4 @@
-# @microfronted-app/composer
+# @microfrontend-app/composer
 
 This package contains the main composer in chage of mounting the microfrontends and inject the shared deps on those.
 

@@ -1,5 +1,5 @@
 {
-  "name": "@microfronted-app/builder",
+  "name": "@microfrontend-app/builder",
   "version": "1.0.0",
   "description": "A build for microfrontend apps",
   "main": "index.js",

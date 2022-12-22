@@ -5,7 +5,7 @@ import router from '../router'
 
 // ToDo: this way of importing is not scalable, need to find a better way for exporting components from a remote library
 const UiKitProvider = React.lazy(() =>
-  import('@microfronted-app/ui-kit').then((module) => ({
+  import('@microfrontend-app/ui-kit').then((module) => ({
     default: module.providers.uiKitProvider,
   })),
 )

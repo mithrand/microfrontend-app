@@ -1,4 +1,4 @@
-# @microfronted-app/application-b
+# @microfrontend-app/application-b
 
 This package contains a sample microfrontend appliaction that will be used in composer.
 

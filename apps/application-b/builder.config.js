@@ -6,7 +6,8 @@ module.exports = {
     name: 'applicationB',
     filename: 'remoteEntry.js',
     remotes: {
-      '@microfronted-app/ui-kit': 'uiKit@https://localhost:3003/remoteEntry.js',
+      '@microfrontend-app/ui-kit':
+        'uiKit@https://localhost:3003/remoteEntry.js',
     },
     exposes: {
       '.': './src',

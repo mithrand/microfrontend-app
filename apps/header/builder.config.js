@@ -1,9 +1,9 @@
 module.exports = {
   prodServer: {
-    port: 3001,
+    port: 3004,
   },
   moduleFederation: {
-    name: 'applicationA',
+    name: 'header',
     filename: 'remoteEntry.js',
     remotes: {
       '@microfrontend-app/ui-kit':

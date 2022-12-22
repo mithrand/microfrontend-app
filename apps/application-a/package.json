@@ -1,5 +1,5 @@
 {
-  "name": "@microfronted-app/application-a",
+  "name": "@microfrontend-app/application-a",
   "version": "1.0.0",
   "description": "A sample application to be used in the composer",
   "main": "./dist/index.js",
@@ -17,7 +17,7 @@
   },
   "keywords": [
     "applicationA",
-    "microfronted"
+    "microfrontend"
   ],
   "author": "antonio munoz",
   "license": "ISC",
@@ -34,9 +34,9 @@
     "pubsubjs": "*"
   },
   "dependencies": {
-    "@microfronted-app/ui-kit": "*"
+    "@microfrontend-app/ui-kit": "*"
   },
   "devDependencies": {
-    "@microfronted-app/builder": "*"
+    "@microfrontend-app/builder": "*"
   }
 }
