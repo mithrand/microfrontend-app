@@ -1,9 +1,9 @@
-import applicationLoader from '../applicationLoader'
+import remoteLoader from '../remoteLoader'
 import Skeleton from './skeleton'
 
 const remoteApp = import('@microfronted-app/application-b')
 
-export default applicationLoader({
+export default remoteLoader({
   remoteApp,
   Skeleton,
 })

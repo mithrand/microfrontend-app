@@ -5,14 +5,17 @@ module.exports = {
   moduleFederation: {
     name: 'applicationA',
     filename: 'remoteEntry.js',
+    remotes: {
+      '@microfronted-app/ui-kit': 'uiKit@https://localhost:3003/remoteEntry.js',
+    },
     exposes: {
       '.': './src',
     },
     shared: {
-      react: { singleton: true },
+      pubsubjs: { singleton: true },
       'react-dom': { singleton: true },
       'react-router-dom': { singleton: true },
-      pubsubjs: { singleton: true },
+      react: { singleton: true },
     },
   },
 }

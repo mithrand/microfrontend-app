@@ -6,12 +6,13 @@ module.exports = {
         'applicationA@https://localhost:3001/remoteEntry.js',
       '@microfronted-app/application-b':
         'applicationB@https://localhost:3002/remoteEntry.js',
+      '@microfronted-app/ui-kit': 'uiKit@https://localhost:3003/remoteEntry.js',
     },
     shared: {
-      react: { singleton: true },
+      pubsubjs: { singleton: true },
       'react-dom': { singleton: true },
       'react-router-dom': { singleton: true },
-      pubsubjs: { singleton: true },
+      react: { singleton: true },
     },
   },
 }

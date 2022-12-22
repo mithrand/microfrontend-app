@@ -1,3 +1,5 @@
 import React from 'react'
 
-export default () => <div>Main</div>
+const Main = () => <div>Main</div>
+
+export default Main

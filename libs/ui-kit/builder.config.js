@@ -1,13 +1,10 @@
 module.exports = {
   prodServer: {
-    port: 3002,
+    port: 3003,
   },
   moduleFederation: {
-    name: 'applicationB',
+    name: 'uiKit',
     filename: 'remoteEntry.js',
-    remotes: {
-      '@microfronted-app/ui-kit': 'uiKit@https://localhost:3003/remoteEntry.js',
-    },
     exposes: {
       '.': './src',
     },

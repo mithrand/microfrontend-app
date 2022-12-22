@@ -1,11 +1,12 @@
 {
-  "name": "@microfronted-app/composer-app",
+  "name": "@microfronted-app/ui-kit",
   "version": "1.0.0",
-  "description": "The composer app is the main app of our microfrontend arquitechture and it's in charge of the shared packages and loading the different app parts",
+  "description": "A ui-kit library",
   "main": "./dist/index.js",
+  "types": "./dist/@types/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "builder build",
+    "build": "builder build --mode microfrontend",
     "serve": "builder serve",
     "start": "builder start",
     "analyse": "builder analyse"
@@ -15,7 +16,7 @@
     "url": "git+https://github.com/mithrand/microfrontend-app.git"
   },
   "keywords": [
-    "composer",
+    "applicationA",
     "microfronted"
   ],
   "author": "antonio munoz",
@@ -25,17 +26,16 @@
   },
   "homepage": "https://github.com/mithrand/microfrontend-app#readme",
   "peerDependencies": {
+    "@chakra-ui/react": "*",
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
+    "framer-motion": "*",
     "@testing-library/react": "*",
     "lodash.merge": "*",
     "pubsubjs": "*",
     "react-dom": "*",
     "react-router-dom": "*",
     "react": "*"
-  },
-  "dependencies": {
-    "@microfronted-app/application-a": "*",
-    "@microfronted-app/application-b": "*",
-    "@microfronted-app/ui-kit": "*"
   },
   "devDependencies": {
     "@microfronted-app/builder": "*"

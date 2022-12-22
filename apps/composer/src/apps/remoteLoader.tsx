@@ -1,6 +1,6 @@
 import React, { ComponentType, lazy, Suspense } from 'react'
 
-const applicationLoader = ({
+const remoteLoader = ({
   remoteApp,
   Skeleton,
 }: {
@@ -16,4 +16,4 @@ const applicationLoader = ({
   )
 }
 
-export default applicationLoader
+export default remoteLoader
