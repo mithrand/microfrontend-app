@@ -1,12 +1,13 @@
 const webpack = require('webpack')
-const WebpackDevServer = require('webpack-dev-server')
 
 const { setConfig } = require('../../src/libs/config')
 const { getProdConfig } = require('../../src/webpack/webpack.prod.config')
-const {
-  getProdServerConfig,
-} = require('../../src/webpack/webpack.prodServer.config')
+
 const { buildModes, devices } = require('../../src/constants')
+const {
+  webpackErrorHandler,
+} = require('../../src/webpack/webpack.errorhandler')
+const server = require('../../src/server')
 
 exports.command = 'serve'
 exports.desc =
@@ -32,7 +33,10 @@ exports.builder = {
 exports.handler = ({ device, mode }) => {
   setConfig({ device, mode })
   const webpackProdConfig = getProdConfig()
-  const serverConfig = getProdServerConfig()
-  const server = new WebpackDevServer(serverConfig, webpack(webpackProdConfig))
-  server.start()
+  webpack(
+    webpackProdConfig,
+    webpackErrorHandler(() => {
+      server.start()
+    }),
+  )
 }

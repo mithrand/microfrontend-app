@@ -5,13 +5,13 @@ module.exports = {
     name: 'composer',
     remotes: {
       '@microfrontend-app/application-a':
-        'applicationA@https://localhost:3001/applicationA.remoteEntry.js',
+        'applicationA@http://localhost:3001/applicationA.remoteEntry.js',
       '@microfrontend-app/application-b':
-        'applicationB@https://localhost:3002/applicationB.remoteEntry.js',
+        'applicationB@http://localhost:3002/applicationB.remoteEntry.js',
       '@microfrontend-app/ui-kit':
-        'uiKit@https://localhost:3003/uiKit.remoteEntry.js',
+        'uiKit@http://localhost:3003/uiKit.remoteEntry.js',
       '@microfrontend-app/header':
-        'header@https://localhost:3004/header.remoteEntry.js',
+        'header@http://localhost:3004/header.remoteEntry.js',
     },
     shared: {
       'react-dom': {

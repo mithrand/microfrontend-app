@@ -9,7 +9,7 @@ module.exports = {
     filename: 'header.remoteEntry.js',
     remotes: {
       '@microfrontend-app/ui-kit':
-        'uiKit@https://localhost:3003/uiKit.remoteEntry.js',
+        'uiKit@http://localhost:3003/uiKit.remoteEntry.js',
     },
     exposes: {
       '.': './src',
