@@ -4,7 +4,7 @@ const { buildModes } = require('../constants')
 
 let config = {
   device: 'desktop',
-  buildMode: buildModes.assets,
+  mode: buildModes.assets,
   devServer: {
     port: 3000,
     setupMiddlewares: (middlewares) => middlewares,

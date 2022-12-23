@@ -26,17 +26,15 @@
   },
   "homepage": "https://github.com/mithrand/microfrontend-app#readme",
   "peerDependencies": {
-    "@testing-library/react": "*",
-    "lodash.merge": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-router-dom": "*",
-    "pubsubjs": "*"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.5.0"
   },
   "dependencies": {
-    "@microfrontend-app/ui-kit": "*"
   },
   "devDependencies": {
+    "@testing-library/react": "*",
+    "lodash.merge": "*",
     "@microfrontend-app/builder": "*"
   }
 }

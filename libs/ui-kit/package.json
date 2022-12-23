@@ -30,14 +30,17 @@
     "@emotion/react": "*",
     "@emotion/styled": "*",
     "framer-motion": "*",
-    "@testing-library/react": "*",
-    "lodash.merge": "*",
     "pubsubjs": "*",
     "react-dom": "*",
     "react-router-dom": "*",
     "react": "*"
   },
+  "dependencies": {
+    
+  },
   "devDependencies": {
+    "@testing-library/react": "*",
+    "lodash.merge": "*",
     "@microfrontend-app/builder": "*"
   }
 }

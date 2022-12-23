@@ -7,9 +7,9 @@
   "scripts": {
     "test": "jest",
     "build": "builder build --mode microfrontend",
-    "serve": "builder serve",
-    "start": "builder start",
-    "analyse": "builder analyse"
+    "serve": "builder serve --mode microfrontend",
+    "start": "builder start --mode microfrontend",
+    "analyse": "builder analyse --mode microfrontend"
   },
   "repository": {
     "type": "git",
@@ -26,17 +26,14 @@
   },
   "homepage": "https://github.com/mithrand/microfrontend-app#readme",
   "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.5.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "@testing-library/react": "*",
     "lodash.merge": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-router-dom": "*",
-    "pubsubjs": "*"
-  },
-  "dependencies": {
-    "@microfrontend-app/ui-kit": "*"
-  },
-  "devDependencies": {
     "@microfrontend-app/builder": "*"
   }
 }

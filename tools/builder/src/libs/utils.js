@@ -16,8 +16,12 @@ const requireIfExist = (path, fallback = null) => {
   return requireInContext(path)
 }
 
+const sanitizeFileName = (fileName) =>
+  fileName.replaceAll('@', '').replaceAll('/', '__').replaceAll('-', '_')
+
 module.exports = {
   resolveInContext,
   requireInContext,
   requireIfExist,
+  sanitizeFileName,
 }

@@ -5,7 +5,13 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { getCommonConfig } = require('./webpack.common.config')
 
-const { resolveInContext } = require('../libs/utils')
+const {
+  resolveInContext,
+  sanitizeFileName,
+  requireInContext,
+} = require('../libs/utils')
+
+const packageJson = requireInContext('./package.json')
 
 const getDevConfig = () => {
   const common = getCommonConfig()
@@ -13,7 +19,7 @@ const getDevConfig = () => {
     mode: 'development',
     devtool: 'eval-source-map',
     output: {
-      filename: '[name].bundle.js',
+      filename: sanitizeFileName(`${packageJson.name}.js`),
       path: resolveInContext('./dist'),
       publicPath: '/',
     },

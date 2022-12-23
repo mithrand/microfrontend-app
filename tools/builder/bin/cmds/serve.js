@@ -6,6 +6,7 @@ const { getProdConfig } = require('../../src/webpack/webpack.prod.config')
 const {
   getProdServerConfig,
 } = require('../../src/webpack/webpack.prodServer.config')
+const { buildModes, devices } = require('../../src/constants')
 
 exports.command = 'serve'
 exports.desc =
@@ -13,16 +14,23 @@ exports.desc =
 exports.aliases = ['serve']
 exports.builder = {
   device: {
-    describe: 'Device build we want to serve for',
+    describe: 'Device build we want to build for',
     type: 'string',
     alias: 'd',
-    default: 'desktop',
-    choices: ['desktop', 'tablet', 'mobile'],
+    default: devices.desktop,
+    choices: Object.keys(devices),
+  },
+  mode: {
+    describe: 'Specify the build mode for the output',
+    type: 'string',
+    alias: 'b',
+    default: buildModes.assets,
+    choices: Object.keys(buildModes),
   },
 }
 
-exports.handler = ({ device }) => {
-  setConfig({ device })
+exports.handler = ({ device, mode }) => {
+  setConfig({ device, mode })
   const webpackProdConfig = getProdConfig()
   const serverConfig = getProdServerConfig()
   const server = new WebpackDevServer(serverConfig, webpack(webpackProdConfig))
