@@ -31,7 +31,9 @@
     "react": "*",
     "@microfrontend-app/ui-kit":"*"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@microfrontend-app/tracking-service": "1.0.0"
+  },
   "devDependencies": {
     "@testing-library/react": "*",
     "lodash.merge": "*",

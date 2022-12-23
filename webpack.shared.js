@@ -17,4 +17,8 @@ module.exports = {
     singleton: true,
     requiredVersion: dependencies['@microfrontend-app/ui-kit'],
   },
+  'pubsub-js': {
+    singleton: true,
+    requiredVersion: dependencies['pubsub-js'],
+  },
 }

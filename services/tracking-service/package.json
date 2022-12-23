@@ -1,0 +1,34 @@
+{
+  "name": "@microfrontend-app/tracking-service",
+  "version": "1.0.0",
+  "description": "A sample service",
+  "main": "./dist/index.js",
+  "publicActions": "./dist/publicActions/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "build": "npm run clean && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithrand/microfrontend-app.git"
+  },
+  "keywords": [
+    "applicationA",
+    "microfrontend"
+  ],
+  "author": "antonio munoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mithrand/microfrontend-app/issues"
+  },
+  "homepage": "https://github.com/mithrand/microfrontend-app#readme",
+  "peerDependencies": {
+    "pubsub-js": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lodash.merge": "*"
+  }
+}
