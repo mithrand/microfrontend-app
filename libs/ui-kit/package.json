@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "A ui-kit library",
   "main": "./dist/index.js",
-  "types": "./dist/@types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "clean": "rm -rf dist",
     "test": "jest",
-    "build": "builder build --mode microfrontend",
-    "serve": "builder serve",
-    "start": "builder start",
-    "analyse": "builder analyse"
+    "build": "npm run clean && tsc"
   },
   "repository": {
     "type": "git",
@@ -26,17 +24,15 @@
   },
   "homepage": "https://github.com/mithrand/microfrontend-app#readme",
   "peerDependencies": {
-    "@chakra-ui/react": "*",
-    "@emotion/react": "*",
-    "@emotion/styled": "*",
-    "framer-motion": "*",
-    "pubsubjs": "*",
-    "react-dom": "*",
-    "react-router-dom": "*",
-    "react": "*"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.5.0"
   },
   "dependencies": {
-    
+    "@chakra-ui/react": "^2.4.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "framer-motion": "^8.0.2"
   },
   "devDependencies": {
     "@testing-library/react": "*",

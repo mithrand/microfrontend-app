@@ -1,4 +1,4 @@
-const deps = require('./package.json').peerDependencies
+const sharedDependencies = require('../../webpack.shared')
 
 module.exports = {
   prodServer: {
@@ -7,29 +7,10 @@ module.exports = {
   moduleFederation: {
     name: 'applicationB',
     filename: 'applicationB.remoteEntry.js',
-    remotes: {
-      '@microfrontend-app/ui-kit':
-        'uiKit@http://localhost:3003/uiKit.remoteEntry.js',
-    },
+    remotes: {},
     exposes: {
       '.': './src',
     },
-    shared: {
-      'react-dom': {
-        singleton: true,
-        requiredVersion: deps['react-dom'],
-        eager: true,
-      },
-      'react-router-dom': {
-        singleton: true,
-        requiredVersion: deps['react-router-dom'],
-        eager: true,
-      },
-      react: {
-        singleton: true,
-        requiredVersion: deps.react,
-        eager: true,
-      },
-    },
+    shared: sharedDependencies,
   },
 }

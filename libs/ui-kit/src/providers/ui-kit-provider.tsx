@@ -5,6 +5,6 @@ type Props = {
   children: ReactNode
 }
 
-export const uiKitProvider: React.FC<Props> = ({ children }) => (
+export const UiKitProvider: React.FC<Props> = ({ children }) => (
   <ChakraProvider>{children}</ChakraProvider>
 )

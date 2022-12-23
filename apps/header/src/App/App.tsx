@@ -1,12 +1,7 @@
 import React, { Suspense } from 'react'
-import AppSkeleton from './Skeleton'
+import { Link } from '@microfrontend-app/ui-kit'
 
-// ToDo: this way of importing is not scalable, need to find a better way for exporting components from a remote library
-const Link = React.lazy(() =>
-  import('@microfrontend-app/ui-kit').then((module) => ({
-    default: module.components.Link,
-  })),
-)
+import AppSkeleton from './Skeleton'
 
 const App = () => (
   <Suspense fallback={<AppSkeleton />}>

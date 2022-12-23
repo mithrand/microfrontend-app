@@ -1,7 +1,10 @@
 import React from 'react'
+import { Text } from '@microfrontend-app/ui-kit'
 
-export type Application = React.FC
-
-const App: Application = () => <div>Application B</div>
+const App: React.FC = () => (
+  <div>
+    <Text>Application B</Text>
+  </div>
+)
 
 export default App

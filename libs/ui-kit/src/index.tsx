@@ -1,2 +1,2 @@
-export * as providers from './providers'
-export * as components from './components'
+export * from './providers'
+export * from './components'
